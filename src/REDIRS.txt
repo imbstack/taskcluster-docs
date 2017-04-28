@@ -1,0 +1,12 @@
+/manual/devel/*: /manual/system-design
+/manual/integrations/*: /manual/using
+/manual/tasks/queue -> /manual/task-execution/queue
+/manual/integrations/apis/* -> /manual/design/apis/hawk/* (for some *)
+/manual/integrations/apis/3rdparty -> /manual/using/integration/frontend
+/manual/integrations/apis/errors -> /manual/design/apis/errors
+/manual/integrations/tools/reference-format -> /manual/design/apis/reference-format
+/manual/devel/* -> /manual/design/devel/*
+/manual/devel/namespaces -> /manual/design/namespaces
+/manual/tasks/decision -> /manual/using/task-graph
+
+generally look for any git rm's

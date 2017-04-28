@@ -1,0 +1,41 @@
+* 10 Tasks
+  * 10 Times: created, deadline, expires
+  * 20 WorkerTypes: Covering provisionerId/workerType and task.payload being worker specific.
+  * 30 Artifacts: Covering the fact that tasks have artifacts, logs are artifacts, redirect artifacts for live logs.
+  * 40 Dependencies: Covering how to make task graphs, and taskGroupId protection using schedulerId
+  * 50 Controlling Tasks: Covering force scheduling and cancellation as protected by schedulerId
+  * 60 Granting Authority: Covering how scopes can be given to tasks... And how workers can expose these scopes to tasks through authenticating proxies. And how this can authorize a 3rd party API.
+  * 70 Messages: Covering how task.routes is used to create pulse messages
+* 20 Task Execution
+  * queues.md Queues - organized by workerType, FIFO modulo priorities, deadlines
+  * Workers - the pull model, the BYOW approach, lots of implementations out there, worker scopes (NOTE: the description of worker-queue interaction, currently in the manual, should move to the reference section under tc-queue)
+  * Provisioners - creating workers, inputs (queue length, ..?), potential complications, not necessary for all workers (e.g., scriptworker)
+* 30 System Design
+  * 10 Microservices / REST APIs
+	* 10 Authentication - scopes, clients, roles, authorized scopes, temp creds, signed URLs
+    * 20 Pulse
+	  * Exchange definitions
+	* 30 Errors
+	* 40 Schemas and reference
+  * 20 Taskcluster Development
+    * 10 Design Principles
+    * 20 RFCs
+    * 30 Idempotency
+    * 40 Best Practices
+  * 30 Namespaces
+* 50 Using Taskcluster - assorted use cases
+  * 10 Integrating with Github
+  * 20 Handling secrets
+  * 30 Indexing tasks
+  * 40 Scheduling tasks (meaning hooks.. what's a better way to say this?)
+  * 50 Building Task Graphs
+  * 60 Working with Artifacts
+  * 70 Uploading to S3
+  * 80 Task notifications
+  * 90 Administration - how to use tools.tc.n, roles, clients, etc.; using tc-cli for command-line management of tasks
+  * 200 Integrating with other apps
+	* 10 Frontend apps - getting creds for a browser's user, calling APIs from a browsre
+	* 20 Backend services - calling APIs using your own credentials
+    * 30 Worker proxies and connections to other services
+    * 40 Pulse integrations (e.g., tc-treeherder)
+	* 50 Useful libraries (links to client libraries).
